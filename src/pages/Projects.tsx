@@ -5,58 +5,22 @@ import { ArrowUpRight, Monitor, TrendingUp, Leaf } from "lucide-react";
 
 const projects = [
   {
-    title: "Digital Transformation for Fortune 500",
+    title: "Computer Vision in Agriculture Using Drone",
     category: "Technology",
     icon: Monitor,
     description:
-      "Led a comprehensive digital transformation initiative, modernizing legacy systems and implementing cloud-native solutions that reduced operational costs by 40%.",
-    tags: ["Cloud Migration", "Microservices", "DevOps"],
-    outcome: "40% cost reduction",
+      "Developed a drone-based computer vision system for precision agriculture, enabling automated crop health monitoring, pest detection, and yield estimation through advanced image analysis and machine learning models.",
+    tags: ["Computer Vision", "Drones", "Machine Learning", "Agriculture"],
+    outcome: "Automated crop monitoring",
   },
   {
-    title: "Market Expansion Strategy",
-    category: "Business",
-    icon: TrendingUp,
-    description:
-      "Developed and executed a market entry strategy for a SaaS company expanding into European markets, resulting in 3x revenue growth within 18 months.",
-    tags: ["Market Analysis", "Go-to-Market", "Strategic Planning"],
-    outcome: "3x revenue growth",
-  },
-  {
-    title: "Carbon Neutral Operations",
+    title: "Creating the Theory of Change for Project Mercy",
     category: "Sustainability",
     icon: Leaf,
     description:
-      "Designed and implemented a comprehensive sustainability roadmap for a manufacturing firm, achieving carbon neutrality two years ahead of schedule.",
-    tags: ["ESG Strategy", "Carbon Footprint", "Supply Chain"],
-    outcome: "Carbon neutral achieved",
-  },
-  {
-    title: "AI-Powered Customer Platform",
-    category: "Technology",
-    icon: Monitor,
-    description:
-      "Architected an AI-driven customer engagement platform that increased customer satisfaction scores by 35% and reduced support costs.",
-    tags: ["AI/ML", "Customer Experience", "Platform Design"],
-    outcome: "35% satisfaction increase",
-  },
-  {
-    title: "Startup Growth Advisory",
-    category: "Business",
-    icon: TrendingUp,
-    description:
-      "Provided strategic guidance to a Series A startup, helping them achieve product-market fit and secure Series B funding of $25M.",
-    tags: ["Fundraising", "Product Strategy", "Scaling"],
-    outcome: "$25M Series B raised",
-  },
-  {
-    title: "Sustainable Supply Chain",
-    category: "Sustainability",
-    icon: Leaf,
-    description:
-      "Redesigned supply chain operations for a retail client, reducing waste by 60% while maintaining cost efficiency and improving supplier relationships.",
-    tags: ["Circular Economy", "Waste Reduction", "Supplier Management"],
-    outcome: "60% waste reduction",
+      "Designed a comprehensive Theory of Change framework for Project Mercy, mapping out impact pathways, defining measurable outcomes, and establishing a clear logic model to guide the organization's strategic initiatives.",
+    tags: ["Theory of Change", "Impact Assessment", "Strategic Planning"],
+    outcome: "Strategic impact framework delivered",
   },
 ];
 
