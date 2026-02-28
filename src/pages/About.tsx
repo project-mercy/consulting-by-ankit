@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Award, Users, Globe, BookOpen } from "lucide-react";
+import coreValuesBg from "@/assets/core-values-bg.jpg";
 
 const stats = [
   { label: "Years Experience", value: "10+" },
@@ -75,11 +76,15 @@ const About = () => {
           </div>
 
           {/* Values */}
-          <div className="bg-card border border-border rounded-xl p-8 md:p-12">
-            <h3 className="text-2xl font-bold text-foreground text-center mb-10">
+          <div
+            className="relative rounded-xl p-8 md:p-12 overflow-hidden bg-cover bg-center"
+            style={{ backgroundImage: `url(${coreValuesBg})` }}
+          >
+            <div className="absolute inset-0 bg-background/85 backdrop-blur-sm" />
+            <h3 className="relative text-2xl font-bold text-foreground text-center mb-10">
               Core Values
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <Award className="w-6 h-6 text-primary" />
