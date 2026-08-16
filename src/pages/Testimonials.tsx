@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
-import { Quote, Star } from "lucide-react";
+import { Quote, Star, StarHalf } from "lucide-react";
 
 const testimonials = [
   {
@@ -48,6 +48,26 @@ const testimonials = [
   },
 ];
 
+const StarRating = ({ rating }: { rating: number }) => {
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+  return (
+    <div className="flex items-center gap-1 mb-4">
+      {Array.from({ length: fullStars }).map((_, i) => (
+        <Star key={`full-${i}`} className="w-4 h-4 text-primary fill-primary" />
+      ))}
+      {hasHalfStar && (
+        <StarHalf key="half" className="w-4 h-4 text-primary fill-primary" />
+      )}
+      {Array.from({ length: emptyStars }).map((_, i) => (
+        <Star key={`empty-${i}`} className="w-4 h-4 text-primary" />
+      ))}
+    </div>
+  );
+};
+
 const Testimonials = () => {
   return (
     <Layout>
@@ -73,14 +93,7 @@ const Testimonials = () => {
                   <p className="text-muted-foreground mb-6 italic">
                     "{testimonial.content}"
                   </p>
-                  <div className="flex items-center gap-1 mb-4">
-                    {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-4 h-4 text-primary fill-primary"
-                      />
-                    ))}
-                  </div>
+                  <StarRating rating={testimonial.rating} />
                   <div className="border-t border-border pt-4">
                     <p className="font-semibold text-foreground">
                       {testimonial.name}
