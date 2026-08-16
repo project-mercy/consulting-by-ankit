@@ -4,41 +4,6 @@ import { Quote, Star, StarHalf } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Client Name",
-    role: "Position",
-    company: "Company Name",
-    content: "Placeholder testimonial text.",
-    rating: 5,
-  },
-  {
-    name: "Client Name",
-    role: "Position",
-    company: "Company Name",
-    content: "Placeholder testimonial text.",
-    rating: 5,
-  },
-  {
-    name: "Client Name",
-    role: "Position",
-    company: "Company Name",
-    content: "Placeholder testimonial text.",
-    rating: 5,
-  },
-  {
-    name: "Client Name",
-    role: "Position",
-    company: "Company Name",
-    content: "Placeholder testimonial text.",
-    rating: 5,
-  },
-  {
-    name: "Client Name",
-    role: "Position",
-    company: "Company Name",
-    content: "Placeholder testimonial text.",
-    rating: 5,
-  },
-  {
     name: "Bete Demeke",
     role: "CEO & President",
     company: "Project Mercy",
