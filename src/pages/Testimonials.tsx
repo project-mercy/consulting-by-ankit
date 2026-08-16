@@ -1,57 +1,72 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
-import { Quote, Star } from "lucide-react";
+import { Quote, Star, StarHalf } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Chen",
-    role: "CEO",
-    company: "TechStart Inc.",
-    content:
-      "Working with this consultant was transformative for our business. Their strategic guidance helped us secure our Series B funding and establish a clear path to profitability. Highly recommended for any startup looking to scale.",
+    name: "Client Name",
+    role: "Position",
+    company: "Company Name",
+    content: "Placeholder testimonial text.",
     rating: 5,
   },
   {
-    name: "Michael Torres",
-    role: "CTO",
-    company: "GlobalFinance Corp",
-    content:
-      "The digital transformation roadmap we developed together has completely modernized our operations. We've seen a 40% reduction in operational costs and significantly improved customer satisfaction.",
+    name: "Client Name",
+    role: "Position",
+    company: "Company Name",
+    content: "Placeholder testimonial text.",
     rating: 5,
   },
   {
-    name: "Emma Larsson",
-    role: "Sustainability Director",
-    company: "Nordic Manufacturing",
-    content:
-      "Their expertise in sustainability consulting was exactly what we needed. They helped us achieve our carbon neutrality goals two years ahead of schedule, all while maintaining profitability.",
+    name: "Client Name",
+    role: "Position",
+    company: "Company Name",
+    content: "Placeholder testimonial text.",
     rating: 5,
   },
   {
-    name: "David Park",
-    role: "Founder",
-    company: "GreenTech Solutions",
-    content:
-      "An exceptional consultant who truly understands the intersection of technology and sustainability. Their insights helped us build a product that's both innovative and environmentally responsible.",
+    name: "Client Name",
+    role: "Position",
+    company: "Company Name",
+    content: "Placeholder testimonial text.",
     rating: 5,
   },
   {
-    name: "Priya Sharma",
-    role: "VP of Strategy",
-    company: "Retail Dynamics",
-    content:
-      "The market expansion strategy was brilliantly executed. We successfully entered three new European markets and exceeded our growth targets by 150%. A true strategic partner.",
+    name: "Client Name",
+    role: "Position",
+    company: "Company Name",
+    content: "Placeholder testimonial text.",
     rating: 5,
   },
   {
-    name: "James Wilson",
-    role: "Managing Director",
-    company: "Capital Ventures",
+    name: "Bete Demeke",
+    role: "CEO & President",
+    company: "Project Mercy",
     content:
-      "I've worked with many consultants over the years, but few have delivered the level of insight and practical value that I experienced here. They truly understand what it takes to build lasting success.",
-    rating: 5,
+      "Ankit is a hard working employee and is also very funny.",
+    rating: 4.5,
   },
 ];
+
+const StarRating = ({ rating }: { rating: number }) => {
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+  return (
+    <div className="flex items-center gap-1 mb-4">
+      {Array.from({ length: fullStars }).map((_, i) => (
+        <Star key={`full-${i}`} className="w-4 h-4 text-primary fill-primary" />
+      ))}
+      {hasHalfStar && (
+        <StarHalf key="half" className="w-4 h-4 text-primary fill-primary" />
+      )}
+      {Array.from({ length: emptyStars }).map((_, i) => (
+        <Star key={`empty-${i}`} className="w-4 h-4 text-primary" />
+      ))}
+    </div>
+  );
+};
 
 const Testimonials = () => {
   return (
@@ -78,14 +93,7 @@ const Testimonials = () => {
                   <p className="text-muted-foreground mb-6 italic">
                     "{testimonial.content}"
                   </p>
-                  <div className="flex items-center gap-1 mb-4">
-                    {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-4 h-4 text-primary fill-primary"
-                      />
-                    ))}
-                  </div>
+                  <StarRating rating={testimonial.rating} />
                   <div className="border-t border-border pt-4">
                     <p className="font-semibold text-foreground">
                       {testimonial.name}
